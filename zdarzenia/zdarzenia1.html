@@ -1,0 +1,53 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<script>
+		function klick(){
+			document.getElementById("abc").innerHTML="aba";
+		}
+		function kolor(k){
+			document.bgColor=k;
+		}
+		function date(){
+			document.getElementById("data").innerHTML=Date();
+		}
+		function fu(){
+			alert("Nacisnałeś coś na klawiaturze");
+		}
+		function f(){
+			var x=document.getElementById("fname");
+			x.value=x.value.toUpperCase();
+		}
+		function po(){
+			alert("Witaj");
+		}
+		function poz(){
+			alert("Zegnaj");
+		}
+		function myFunction(event) {
+			var x = event.key;
+			document.getElementById("demo").innerHTML = "The pressed key was: " + x;
+		}
+	</script>
+</head>
+<body onload="po()" onUnload="poz()">
+
+	<a href="http://www.google.pl" onmouseover="alert('Opowidzieć ci fraszke?');">LINK</a>
+	<p  id="abc" onclick="klick();">aaa</p> 
+	<p onclick="this.innerHTML='AAA'">BBB</p>
+	<button onclick="this.innerHTML=parseInt(this.innerHTML)+1">0</button>
+	<button onclick="setTimeout('alert(\'Witaj!\')',1000)">ALE</button>
+	<p onmouseover="kolor('green')">Zielony</p>
+	<p onmouseover="kolor('red')">Czerwony</p>
+	<p onmouseover="kolor('blue')">Niebieski</p>
+	<br><br>
+	<button onclick="date()">DATA</button>
+	<p id="data"></p>
+	
+	<input type="text" onkeydown="fu()">
+	<input type="text" id="fname" onkeyup="f()">
+	<br>
+	<input type="text" size="40" onkeydown="myFunction(event)">
+	<p id="demo"></p>
+</body>
+</html>

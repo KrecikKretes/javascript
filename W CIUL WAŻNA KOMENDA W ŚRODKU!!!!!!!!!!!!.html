@@ -1,0 +1,53 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<style>
+		div{
+			border-top:1px solid black;
+			border-bottom:1px solid black;
+			margin:0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div>
+	<center>
+		<p><b> Obecny czas : <span id="czas"></span></p></b>
+		<p><b> Obecna data : <span id="data"></span></p></b>
+		<script>
+			function aaa(){
+				var data=new Date();
+				var h=data.getHours();
+				if(h<10)
+					h="0"+h;
+				var m=data.getMinutes();
+				if(m<10)
+					m="0"+m;
+				var s=data.getSeconds();
+				if(s<10)
+					s="0"+s;
+				
+				var tab =[]
+					tab[0]="stycznia";
+					tab[1]="luty";
+					tab[2]="marca";
+					tab[3]="kwietnia";
+					tab[4]="maja";
+					tab[5]="czerwca";
+					tab[6]="lipca";
+					tab[7]="sierpnia";
+					tab[8]="września";
+					tab[9]="października";
+					tab[10]="listopada";
+					tab[11]="grudnia";
+				
+				document.getElementById("czas").innerHTML= h+":"+m+":"+s;
+				document.getElementById("data").innerHTML= data.getDate()+" "+tab[data.getMonth()]+" "+data.getFullYear();
+				setInterval(aaa,1000);
+			}
+			aaa()
+		</script>
+		
+	</div>
+</body>
+</html>

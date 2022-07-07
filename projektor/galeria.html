@@ -1,0 +1,100 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="styls_galeria.css">
+	<script>
+		function czas (){
+			var data=new Date();
+				var d=data.getDate();
+				var mi=data.getMonth()+1;
+				var rok=data.getFullYear();
+				var h=data.getHours();
+				if(mi<10)
+					mi="0"+mi;
+				if(h<10)
+					h="0"+h;
+				var m=data.getMinutes();
+				if(m<10)
+					m="0"+m;
+				var s=data.getSeconds();
+				if(s<10)
+					s="0"+s;
+					
+				document.getElementById("czas").innerHTML=d+"."+mi+"."+rok+"<br>"+h+":"+m+":"+s;
+		}
+		setInterval("czas()",1000);
+	
+	</script>
+	<title>Biuro podróży Paradays - Galeria</title>
+</head>
+<body onload="czas()">
+	<header>
+		<a href="index.html"><img src="img/logo.png" class="logo" alt="logo"></a>
+		
+			<table id="tabelka">
+				<tr>
+					<td><a href="http://www.twitter.com" id="t">t</a></td>
+					<td><a href="http://www.youtube.com" id="y">y</a></td>
+					<td><a href="http://www.skype.com" id="s">s</a></td>
+					<td><a href="http://www.facebook.com" id="f">f</a></td>
+					<td><a href="http://www.google.com" id="g">g</a></td>
+				</tr>
+			</table>
+		
+		<hr id="linia">
+		<nav>
+			<div class="nave">
+				<a href="promo.html">Promocje</a> &nbsp; &nbsp;
+			</div>
+			<div class="nave">
+				<a href="oferta.html">Oferta</a> &nbsp; &nbsp;	
+			</div>
+			<div class="nave">
+				<a href="galeria.html">Galeria</a> &nbsp; &nbsp;
+			</div>
+			<div class="nave">
+				<a href="kontakt.html">Kontakt</a> &nbsp; &nbsp;
+			</div>
+		</nav>
+	</header>
+	<main>
+		<table id="tab">
+			<tr>
+				<td colspan="3"><h1>Miasta do których możemy Cię wysłać</h1></td>
+			<tr>
+				<td><img src="img/stambul.png" id="stambul" alt="stambul"></td>
+				<td><img src="img/sharm.jpg" id="sharm" alt="sharm"></td>
+				<td><img src="img/bejrut.jpg" id="bejrut" alt="bejrut"></td>
+			</tr>
+			<tr>
+				<td><img src="img/amman.jpg" id="amman" alt="amman"></td>
+				<td><img src="img/jerozolima.jpg" id="jerozolima" alt="jerozolima"></td>
+				<td><img src="img/katar.jpg" id="katar" alt="katar"></td>
+			</tr>
+			<tr>
+				<td colspan="3"><h1>Wyjątkowe miejsca na Bliskim </h1></td>
+			</tr>
+			<tr>
+				<td><img src="img/baner1.jpg" alt="baner1"></td>
+				<td><img src="img/baner2.jpg" alt="baner2"></td>
+				<td><img src="img/baner3.jpg" alt="baner3"></td>
+			</tr>
+			<tr>
+				<td><img src="img/baner4.jpg" alt="baner4"></td>
+				<td><img src="img/baner5.jpg" alt="baner5"></td>
+			</tr>
+		</table>
+	</main>
+	<footer>
+		<div id="lewy">
+		<a href="index.html"><img src="img/logo.png" class="logo" alt="logo"></a>
+		</div>
+		<div id="right">
+		&copy; Paradays Sp z.o.o, 2019
+		<br>
+		<span id="czas"></span>
+		</div>
+	</footer>
+</body>
+</html>

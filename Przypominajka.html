@@ -1,0 +1,29 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<form>
+		<p>PODAJ 6-znakowe hasło wg wzorca!</p>
+		<h1>HASŁO: <input id="has" type="text" onblur="fun()"></h1>
+		<p>Ilość znaków : <span id="znak"></span></p>
+		<p>Komunikat: <span id="kom"></span></p>
+		<p><span id="lit"></span></p>
+	</form>
+	<script>
+		function fun(){
+			var wzor=/^[A-Z]#\d{3}[a-z]$/;
+			var x=document.getElementById("has").value;
+			document.getElementById("znak").innerHTML=x.length;
+			if(x.search(wzor)==-1){
+				document.getElementById("kom").innerHTML="Hasło nieprawidłowe!";
+				document.getElementById("lit").innerHTML="";
+			}else{
+				document.getElementById("kom").innerHTML="Poprawne hasło!";
+				document.getElementById("lit").innerHTML="W haśle użyto liter: "+x.slice(0,1)+x.slice(-1);
+			}
+			
+		}
+	</script>
+</body>
+</html>

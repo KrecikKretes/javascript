@@ -1,0 +1,122 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<style>
+		div{
+			border-bottom:1px solid black;
+			border-top:1px solid black;
+			text-align:center;
+		}
+		#red{
+			color:red;
+			font-weight:bold;
+		}
+		table{
+			text-align:center;
+			position:relative;
+			left:47%;
+			border:1px solid red;
+		}
+		td{
+			border:1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		document.write("<div>");
+		var wyr=/[a-z][@]\d\d[A-Z][A-Z]/;
+		var haslo=prompt("Podaj hasło","");
+		if(haslo!=""){
+			document.write("Podano HASŁO:<span id=red> "+haslo);
+			document.write("</span><br>Ilość znaków: "+haslo.length);
+		
+			if(haslo.search(wyr)!=-1){
+				document.write("<br> Komunikat: Poprawne hasło!<br>");
+				document.write("W haśle użyto liter "+haslo.slice(0,1)+haslo.slice(-2))
+			}else{
+				document.write("<br>Komunikat: Błędne hasło");
+			}
+		}else{
+			document.write("Hasło jest puste");
+		}
+		document.write("</div><br><br><div>");
+	
+		var liczba1=parseInt(prompt("Podaj 1 liczbe do zad 2",""));
+		var liczba2=parseInt(prompt("Podaj 2 liczbe do zad 2",""));
+		if(liczba1!=""||liczba2!=""){
+			if(liczba1<liczba2){
+				document.write("Podana liczba pierwsza to : <span id=red>"+liczba1);
+				document.write("<br> </span>Podana liczba druga to : <span id=red>"+liczba2);
+				document.write("<br> </span>Ciąg liczb całkowitych: <br><table> <tr>");
+				for(var i=liczba1;i<=liczba2;i++){
+					document.write("<td>"+i+"</td>")
+				}
+				document.write("<br> </tr></table> Komunikat: <span id=red>Ciąg liczb rosnący!</span>");
+			}
+			if(liczba1>liczba2){
+				document.write("Podana liczba pierwsza to : <span id=red>"+liczba1);
+				document.write("<br> </span>Podana liczba druga to : <span id=red>"+liczba2);		
+				document.write("<br> </span>Ciąg liczb całkowitych: <br><table> <tr>");
+				for(var i=liczba1;i>=liczba2;i--){
+					document.write("<td>"+i+"</td>")
+				}
+				document.write("<br> </tr></table> Komunikat: <span id=red>Ciąg liczb malejący!</span>");
+			}
+			if(liczba1==liczba2){
+				document.write("Podałeś te same liczby!");
+			}
+		}else{
+			document.write("Podaj liczbe");
+		}
+		document.write("</div><br><br><div>");
+		
+		var tab=[];
+			tab['Podaj najbliższy rok przestępny']=2020;
+			tab['Podaj rok rozpoczęcia ery Uniksa']=1970;
+			tab['Ile lat ma ZSE']=71;
+			
+		
+		var wynik=0;
+		for(var l in tab){
+			if(tab[l]==parseInt(prompt(l,""))){
+				alert("Dobra odpowiedź");
+				wynik=wynik+1;
+			}else{
+				alert("Zła odpowiedź");
+			}
+		}
+		document.write("Twój wynik to "+wynik);
+		
+		document.write("</div><br><br><div>");
+		
+		var quiz=["HASŁO","CIĄG","ODLICZANIE","QUIZ","LOSOWANIE"];
+		var ran=Math.ceil(Math.random()*5-1);
+		document.write("<br>Twoje losowe zadanie to :<span id=red> "+quiz[ran]);
+		document.write("<br></span>Oto dostępny zestaw zadań:<br>|");
+		for (var z=0;z<5;z++){
+			document.write(quiz[z]+"|");
+		}
+		
+		document.write("</div><br><br><div>");
+		
+		var miesiace=["stycznia","lutego","marca","kwietnia","maja","czerwca","lipca","sierpnia","września","października","listopada","grudnia"];
+		var dzis=new Date();
+		var mikolaj=new Date(2019,11,6,0,0,1);
+		document.write("<br>"+mikolaj.getFullYear()+"<br>");
+		document.write("Mikołajki zaczną się: "+mikolaj.getDate()+" "+miesiace[mikolaj.getMonth()]+" ,sekunde po północy!<br>");
+		document.write("Dziś jest "+dzis.getDate()+" "+miesiace[dzis.getMonth()]);
+		document.write("<br>Zaczynamy odliczanie<br>");
+		var roznica=mikolaj-dzis;
+		var dni=Math.ceil(roznica/1000/60/60/24);
+		var godziny=Math.ceil((roznica/1000/60/60)%24-1);
+		var minuty=Math.ceil((roznica/1000/60)%60-1);
+		var sekundy=Math.ceil((roznica/1000)%60-1);
+		document.write("Do Mikołajek pozostało: <span id=red>"+dni+"</span> dni <span id=red>"+godziny+"</span> godzin <span id=red>"+minuty+"</span> minut <span id=red>"+sekundy+"</span> sekund");
+		
+		
+		
+		
+	</script>
+</body>
+</html>

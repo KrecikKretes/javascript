@@ -1,0 +1,42 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<script>
+		var r=parseInt(prompt("Podaj promien",""));
+		alert(Math.pow(r,2)*Math.PI);
+		
+		var losFloat=Math.random()*6+1;
+		var los=Math.floor(losFloat);
+		alert(los);
+		
+		alert(4/3*Math.PI*Math.pow(r,3));
+		
+		
+		var tab=[];
+		var tab2=[];
+		var liczba=0;
+		for(var i=0;i<6;i++){
+			tab2.push(parseInt(prompt("Podaj "+(i+1)+" liczbe do totka","")));
+		}
+		for(var i=0;i<6;i++){
+			tab.push(Math.floor(Math.random()*49+1));
+			for(var y=0;y<6;y++){
+				if(tab[i]==tab2[y]){
+				liczba++;
+				}
+			}
+			document.write(tab[i]+"<br>");
+		}
+		document.write("Trafiłeś "+liczba+" z 6");
+		
+		document.write("<br><br>");
+		
+		
+		var naz=[];
+		naz=["Kowalski","Nowak","Pies","Nie","ABC"];
+		document.write(naz[Math.floor(Math.random()*4)]);
+	</script>
+</body>
+</html>

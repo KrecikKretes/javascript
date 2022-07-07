@@ -1,0 +1,125 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<title>Biuro podróży Paradays - Kontakt</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="styls_kont.css">
+	<script>
+		function czas (){
+			var data=new Date();
+				var d=data.getDate();
+				var mi=data.getMonth()+1;
+				var rok=data.getFullYear();
+				var h=data.getHours();
+				if(mi<10)
+					mi="0"+mi;
+				if(h<10)
+					h="0"+h;
+				var m=data.getMinutes();
+				if(m<10)
+					m="0"+m;
+				var s=data.getSeconds();
+				if(s<10)
+					s="0"+s;
+					
+				document.getElementById("czas").innerHTML=d+"."+mi+"."+rok+"<br>"+h+":"+m+":"+s;
+		}
+		setInterval("czas()",1000);
+	</script>
+</head>
+<body onload="czas()">
+	<header>
+		<a href="index.html"><img src="img/logo.png" class="logo" alt="logo"></a>
+			<table id="table">
+				<tr>
+					<td><a href="http://www.twitter.com" id="t">t</a></td>
+					<td><a href="http://www.youtube.com" id="y">y</a></td>
+					<td><a href="http://www.skype.com" id="s">s</a></td>
+					<td><a href="http://www.facebook.com" id="f">f</a></td>
+					<td><a href="http://www.google.com" id="g">g</a></td>
+				</tr>
+			</table>
+		<hr id="linia">
+		<nav>
+		<div class="nave">
+				<a href="promo.html">Promocje</a> &nbsp; &nbsp;
+			</div>
+			<div class="nave">
+				<a href="oferta.html">Oferta</a> &nbsp; &nbsp;	
+			</div>
+			<div class="nave">
+				<a href="galeria.html">Galeria</a> &nbsp; &nbsp;
+			</div>
+			<div class="nave">
+				<a href="kontakt.html">Kontakt</a> &nbsp; &nbsp;
+			</div>
+		</nav>
+	</header>
+	<main>
+		<script>
+			var wnazw=/[a-zA-Z]{2,}/;
+			var wemail=/.{2,}[@]{1}[a-zA-Z]{2,}[.][a-zA-Z]{2,3}/;
+			var wtel=/\d{9}/;
+			var wdni=/\d{1,3}/;
+			
+		</script>
+		<div id="divu">
+			<h3>Skontaktuj się z nami</h3>
+			<form action="mailto:damian.zawisza@zse.krakow.pl" method="POST">
+			<table id="kont">
+				<tr>
+					<td>Podaj nazwisko</td>
+					<td><input type="text" id="nazwisko"></td>
+				</tr>
+				<tr>
+					<td>Podaj e-mail</td>
+					<td><input type="text" id="email"></td>
+				</tr>
+				<tr>
+					<td>Podaj numer telefonu</td>
+					<td><input type="text" id="telefon"></td>
+				</tr>
+				<tr>
+					<td>Podaj dzisiejszą datę</td>
+					<td><input type="date" id="data"></td>
+				</tr>
+				<tr>
+					<td>Podaj na ile dni namierzasz wyjechać</td>
+					<td><input type="text" id="dni"></td>
+				</tr>
+			</table>
+			<br>
+			<br>
+			
+			
+			<button onclick="guzik()">Wyślij</button>	
+			</form>
+		</div>
+		<script>
+			function guzik(){
+				var dni=document.getElementById("dni").value;
+				var nazwisko=document.getElementById("nazwisko").value;
+				var email=document.getElementById("email").value;
+				var telefon=document.getElementById("telefon").value;
+				var data=document.getElementById("data").value;
+				if(wdni.test(dni)&&wemail.test(email)&&wtel.test(telefon)&&wnazw.test(nazwisko)){
+					document.getElementById("divu").style.fontSize="50px";
+					document.getElementById("divu").innerHTML="Wiadomość została wysłana <br> Dziekujemy za zgłoszenie";
+				}else{
+					alert("Wiadomość nie została wysłana");
+				}
+			}
+		</script>
+	</main>
+	<footer>
+		<div id="lewy">
+		<a href="index.html"><img src="img/logo.png" class="logo" alt="logo"></a>
+		</div>
+		<div id="right">
+		&copy; Paradays Sp z.o.o, 2019
+		<br>
+		<span id="czas"></span>
+		</div>
+	</footer>
+</body>
+</html>

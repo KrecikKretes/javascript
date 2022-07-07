@@ -1,0 +1,30 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<style>
+		div{
+			margin:0 auto;
+			text-align:center;
+			background-color:red;
+			width:150px;
+			height:50px;
+		}
+	</style>
+	<script>
+		function fu(){
+			document.getElementById("p").innerHTML="Myszka jest w pudle";
+		}
+		function out(){
+			document.getElementById("p").innerHTML="Teraz myszka jest na zewnątrz";
+		}
+		function fua(){
+			document.getElementById("p").innerHTML="Kaj jest myszka?";
+		}
+	</script>
+</head>
+<body onload="fua()">
+	<div onmouseover="fu()" onmouseout="out()">
+		<p id="p">Chodź, myszko tutaj</p>
+	</div>
+</body>
+</html>

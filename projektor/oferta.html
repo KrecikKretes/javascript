@@ -1,0 +1,96 @@
+<!doctype html>
+<head>
+	<title>Biuro podróży Paradays - Oferta</title>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="styls_oferta.css">
+	<script>
+		function czas (){
+			var data=new Date();
+				var d=data.getDate();
+				var mi=data.getMonth()+1;
+				var rok=data.getFullYear();
+				var h=data.getHours();
+				if(mi<10)
+					mi="0"+mi;
+				if(h<10)
+					h="0"+h;
+				var m=data.getMinutes();
+				if(m<10)
+					m="0"+m;
+				var s=data.getSeconds();
+				if(s<10)
+					s="0"+s;
+					
+				document.getElementById("czas").innerHTML=d+"."+mi+"."+rok+"<br>"+h+":"+m+":"+s;
+		}
+		setInterval("czas()",1000);
+		var tab=["img/jerozolima.jpg","img/katar.jpg","img/bejrut.jpg","img/amman.jpg","img/stambul.png","img/sharm.jpg"];
+		var tab2=["img/opis1.jpg","img/opis2.jpg","img/opis3.jpg","img/opis4.jpg","img/opis5.jpg","img/opis6.jpg"];
+			var licznik=0;
+			function galeria1(){
+				if(licznik==0){
+					licznik=tab.length;
+				}
+				licznik--;
+				document.getElementById("zdie").src=tab[licznik];
+				document.getElementById("opis").src=tab2[licznik];
+			}
+			function galeria2(){
+				if(licznik==tab.length-1){
+					licznik=-1;
+				}
+				licznik++;
+				document.getElementById("zdie").src=tab[licznik];
+				document.getElementById("opis").src=tab2[licznik];
+			}
+	</script>
+</head>
+<body onload="czas();wybor()">
+	<header>
+		<a href="index.html"><img src="img/logo.png" class="logo" alt="logo"></a>
+			<table>
+				<tr>
+					<td><a href="http://www.twitter.com" id="t">t</a></td>
+					<td><a href="http://www.youtube.com" id="y">y</a></td>
+					<td><a href="http://www.skype.com" id="s">s</a></td>
+					<td><a href="http://www.facebook.com" id="f">f</a></td>
+					<td><a href="http://www.google.com" id="g">g</a></td>
+				</tr>
+			</table>
+		<hr id="linia">
+		<nav>
+			<div class="nave">
+				<a href="promo.html">Promocje</a> &nbsp; &nbsp;
+			</div>
+			<div class="nave">
+				<a href="oferta.html">Oferta</a> &nbsp; &nbsp;	
+			</div>
+			<div class="nave">
+				<a href="galeria.html">Galeria</a> &nbsp; &nbsp;
+			</div>
+			<div class="nave">
+				<a href="kontakt.html">Kontakt</a> &nbsp; &nbsp;
+			</div>
+		</nav>
+	</header>
+	<main>
+		<br>
+		<img src="img/jerozolima.jpg" id="zdie" alt="Zdjęcie">
+		<img src="img/opis1.jpg" id="opis" alt="opis">
+		<br>
+		<button type="button" onclick="galeria1()" id="lb">&lt;&lt;</button> 
+		<button type="button" onclick="galeria2()" id="pb">&gt;&gt;</button>
+	</main>
+	<footer>
+		<div id="lewy">
+		<a href="index.html"><img src="img/logo.png" class="logo" alt="logo"></a>
+		</div>
+		<div id="right">
+		&copy; Paradays Sp z.o.o, 2019
+		<br>
+		<span id="czas"></span>
+		</div>
+	</footer>
+</body>
+</html>

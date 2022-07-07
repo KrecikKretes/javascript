@@ -1,0 +1,32 @@
+<!doctype html>
+<head>
+	<script>
+		var x=parseFloat(prompt("Podaj swoja wage (Jesli dajesz z przecinkiem to daj kropke ...........)",""));
+		var y=parseFloat(prompt("Podaj swoj wzrost",""));
+		if(y>2.5){
+		y=y/100;
+		}
+		var z=parseFloat(x/(y*y));
+		if(z>=15){
+			if(z>=18.6){
+				if(z>=25){
+					if(z>30){
+					document.write("Otylosc");
+					}else{
+					document.write("Nadwaga");
+					}
+				}else{
+				document.write("Norma");
+				}
+			}else{
+			document.write("Niedowaga");
+			}
+		}else{
+		document.write("Wychudzenie");
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>
+

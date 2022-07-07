@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Nazwisko Imię"/>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>ZSE | AK. JavaScript.Praca z obrazem2. </title>
+</head>
+<body>
+
+<header>
+<h1>APLIKACJE KLIENCKIE</h1>
+<h2>JavaScript. Praca z obrazem2.</h2>
+	<nav>
+	<ul>
+	  <li><a href="index.html">STRONA GŁÓWNA</a></li>
+      <li><a href="zad1.html">ZADANIE 1</a></li>
+      <li><a href="zad2.html">ZADANIE 2</a></li>
+	</ul>
+	</nav>
+</header>
+<main>	
+		<h1> Coraz bliżej święta! Czas obdarować swoich bliskich życzeniami.</h1>
+		<h3> Specjalnie dla Ciebie prezentujemy najnowszą kolekcję nastrojowych kartek:-)</h3><br/>
+		<img id="pierwsza" src="1.jpg" alt="card" onmouseout="pierwszyp()" onmouseover="pierwszy()" >&nbsp;
+		<img id="druga" src="2.jpg" alt="card" onmouseover="drugi()" onmouseout="drugip()" >&nbsp;
+		<img id="trzecia" src="3.jpg" alt="card" onmouseover="trzeci()" onmouseout="trzecip()" >
+		<form>
+		<label> Podaj ilość sztuk:</label><input id="ilosc" type="number"/><br/>
+		<button onclick="policz(1)" type="button">KARTA_1</button>
+		<button onclick="policz(2)" type="button">KARTA_2</button>
+		<button onclick="policz(3)" type="button">KARTA_3</button><br/>
+		<p>Koszt wynosi: <span id="wynik">____</span>PLN</p>
+		<button type="reset" onclick="clean()"> RESET</button>
+		</form>
+
+		<script>
+			function pierwszyp(){
+				document.getElementById("pierwsza").src="1.jpg";
+			}
+			function drugip(){
+				document.getElementById("druga").src="2.jpg";
+			}
+			function trzecip(){
+				document.getElementById("trzecia").src="3.jpg";
+			}
+			function pierwszy(){
+				document.getElementById("pierwsza").src="11.jpg";
+			}
+			function drugi(){
+				document.getElementById("druga").src="22.jpg";
+			}
+			function trzeci(){
+				document.getElementById("trzecia").src="33.jpg";
+			}
+			function policz(i){
+				var j=document.getElementById("ilosc").value;
+				if(i==1){
+					document.getElementById("wynik").innerHTML=5*j;
+				}
+				if(i==2){
+					document.getElementById("wynik").innerHTML=3*j;
+				}
+				if(i==3){
+					document.getElementById("wynik").innerHTML=4*j;
+				}
+			}
+			function clean(){
+				document.getElementById("wynik").innerHTML="___";
+			}
+		</script>
+		</main>
+<footer>
+<p>Copyright &copy; ZSE 2018, Imię Nazwisko, kl. xx</p>
+</footer>
+</body>
+</html>

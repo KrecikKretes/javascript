@@ -1,0 +1,229 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="styls.css">
+	<title>Biuro Podróży Paradays</title>
+	<script>
+		function baner(){
+			var cyfra=Math.floor((Math.random()*5)+1);
+			document.getElementById("baner").innerHTML='<img src=img/baner'+cyfra+'.jpg>';
+		}
+		setInterval("baner()",10000);
+		function czas (){
+			var data=new Date();
+				var d=data.getDate();
+				var mi=data.getMonth()+1;
+				var rok=data.getFullYear();
+				var h=data.getHours();
+				if(mi<10)
+					mi="0"+mi;
+				if(h<10)
+					h="0"+h;
+				var m=data.getMinutes();
+				if(m<10)
+					m="0"+m;
+				var s=data.getSeconds();
+				if(s<10)
+					s="0"+s;
+					
+				document.getElementById("czas").innerHTML=d+"."+mi+"."+rok+"<br>"+h+":"+m+":"+s;
+		}
+		setInterval("czas()",1000);
+		function wakacje(){
+			var dzis=new Date();
+			var wakacje=new Date(2019,5,24,0,0,0);
+			var roznica=wakacje-dzis;
+			var dni=Math.ceil(roznica/1000/60/60/24);
+			var godziny=Math.ceil((roznica/1000/60/60)%24);
+			var minuty=Math.ceil((roznica/1000/60)%60-1);
+			var sekundy=Math.ceil((roznica/1000)%60-1);
+			document.getElementById("wakacje").innerHTML=dni+" dni, "+godziny+" godzin, "+minuty+" minut, "+sekundy+" sekund";
+		}
+		function kolory(){
+			
+			document.getElementById("promo").style.color="orange";
+			document.getElementById("wakacje").style.color="orange";
+		}
+		setInterval("wakacje()",1000);
+		setInterval("kolory()",1000);
+		function myszka1(){
+			document.getElementById("stambul").src="img/stambul.png";
+			document.getElementById("div1").style="opacity:0.8";
+		}
+		function back1(){
+			document.getElementById("stambul").src="img/stambul1.png";
+			document.getElementById("div1").style="opacity:0";
+		}
+		
+		function myszka2(){
+			document.getElementById("sharm").src="img/sharm.jpg";
+			document.getElementById("div2").style="opacity:0.8";
+		}
+		function back2(){
+			document.getElementById("sharm").src="img/sharm1.jpg";
+			document.getElementById("div2").style="opacity:0";
+		}
+		
+		function myszka3(){
+			document.getElementById("bejrut").src="img/bejrut.jpg";
+			document.getElementById("div3").style="opacity:0.8";
+		}
+		function back3(){
+			document.getElementById("bejrut").src="img/bejrut1.jpg";
+			document.getElementById("div3").style="opacity:0";
+		}
+		
+		function myszka4(){
+			document.getElementById("amman").src="img/amman.jpg";
+			document.getElementById("div4").style="opacity:0.8";
+		}
+		function back4(){
+			document.getElementById("amman").src="img/amman1.jpg";
+			document.getElementById("div4").style="opacity:0";
+		}
+		
+		function myszka5(){
+			document.getElementById("jerozolima").src="img/jerozolima.jpg";
+			document.getElementById("div5").style="opacity:0.8";
+		}
+		function back5(){
+			document.getElementById("jerozolima").src="img/jerozolima1.jpg";
+			document.getElementById("div5").style="opacity:0";
+		}
+		
+		function myszka6(){
+			document.getElementById("katar").src="img/katar.jpg";
+			document.getElementById("div6").style="opacity:0.8";
+		}
+		function back6(){
+			document.getElementById("katar").src="img/katar1.jpg";
+			document.getElementById("div6").style="opacity:0";
+		}
+	</script>
+</head>
+<body onload="baner();wakacje();czas();kolory()">
+	<header>
+		<a href="index.html"><img src="img/logo.png" class="logo" alt="logo"></a>
+		<table id="tabela">
+			<tr>
+				<td><a href="http://www.twitter.com" id="t">t</a></td>
+				<td><a href="http://www.youtube.com" id="y">y</a></td>
+				<td><a href="http://www.skype.com" id="s">s</a></td>
+				<td><a href="http://www.facebook.com" id="f">f</a></td>
+				<td><a href="http://www.google.com" id="g">g</a></td>
+			</tr>
+		</table>
+		<hr class="linia">
+		<nav>
+			<div class="nave">
+				<a href="promo.html">Promocje</a> &nbsp; &nbsp;
+			</div>
+			<div class="nave">
+				<a href="oferta.html">Oferta</a> &nbsp; &nbsp;	
+			</div>
+			<div class="nave">
+				<a href="galeria.html">Galeria</a> &nbsp; &nbsp;
+			</div>
+			<div class="nave">
+				<a href="kontakt.html">Kontakt</a> &nbsp; &nbsp;
+			</div>
+		</nav>
+	</header>
+	<main>
+		<p id="baner"></p>
+		<h2 id="promo"> OFERTA OGRANICZONA CZASOWO!!! </h2>
+		<p id="wakacje"></p>
+		<h1>
+			Wyjedź w swoje wymarzone miejsce
+		</h1>
+		<hr class="linia2">
+		<p>
+			Wyobraź sobie, że leżysz na pięknej plaży, słyszysz plusk wody, a do tego nikt ani nic Ci nie przeszkadza. Może sprawisz że, to marzenie stanie się prawdziwe? Już dzisiaj spraw sobie beztroskie wczasy za granicą
+			Do wyboru masz setki hoteli z Bliskiego Wschodu, a do każdej miejscowości gdzie oferujemy wypoczynek możesz polecieć z każdego miasta w Polsce. Możesz też skorzystać z naszych doradców, którzy pomogą Ci wybrać lub stworzyć wymarzone wakacje. Zabierz więc swoich przyjaciół, rodzinę lub nawet swojego pupila domowego i wyrusz na podróż swojego życia.
+		</p>
+		<h1>
+			Biuro podróży Paradays
+		</h1>
+		<hr class="linia2">
+		<p>
+			Nasze biuro w ciągu 12 lat istnienia wyrobiło sobie opinię jako jedne z najlepszych biur podróży. Tysiące zadowolonych klientów, setki pozytywnych komentarzy. Dzięki naszym usługom wielu ludzi mogło odpocząć od codzinnej rutyny. Organizujemy wycieczki na tereny: Turcji, Egiptu, Cypru, Arabię Saudyjską i inne państwa Bliskiego Wschodu. W przyszłości zamierzamy się rozszerzyć ofertę na teren Europy oraz Afryki.
+		</p>
+		<h1>
+			Polecane kierunki:
+		</h1>
+		<hr class="linia2">
+		<table id="zdj">
+			<tr>
+				<td><img src="img/stambul1.png" id="stambul" alt="stambul"></td>
+				<td><img src="img/sharm1.jpg" id="sharm" alt="sharm"></td>
+				<td><img src="img/bejrut1.jpg" id="bejrut" alt="bejrut"></td>
+			</tr>
+			<tr>
+				<td><img src="img/amman1.jpg" id="amman" alt="amman"></td>
+				<td><img src="img/jerozolima1.jpg" id="jerozolima" alt="jerozolima"></td>
+				<td><img src="img/katar1.jpg" id="katar" alt="katar"></td>
+			</tr>
+		</table>
+		
+		<table id="opisy">
+			<tr>
+				<td>
+					<div id="div1" onmouseover="myszka1()" onmouseout="back1()">
+						<span class="fonte">3<span class="star">f</span>Hotel Margonem</span>
+						<h6>Pobyt : 7 dniowy
+						<br>Stambuł</h6> 
+					</div>
+				</td>
+				<td>
+					<div id="div2" onmouseover="myszka2()" onmouseout="back2()">
+						<span class="fonte">2<span class="star">f</span>Hotel Triss</span>
+						<h6>Pobyt: 4 dni
+						<br>Sharm</h6> 
+					</div>
+				</td>
+				<td>
+					<div id="div3" onmouseover="myszka3()" onmouseout="back3()">
+						<span class="fonte">5<span class="star">f</span>Hotel Geralt</span>
+						<h6>Pobyt: 31 dni
+						<br>Bejrut</h6> 
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td  class="ala">
+					<div id="div4" onmouseover="myszka4()" onmouseout="back4()">
+						<span class="fonte">4<span class="star">f</span>Hotel Yennefer</span>
+						<h6>Pobyt: 7 dni
+						<br>Amman</h6> 
+					</div>
+				</td>
+				<td  class="ala">
+					<div id="div5" onmouseover="myszka5()" onmouseout="back5()">
+						<span class="fonte">4+<span class="star">f</span>Hotel D.B.D</span>
+						<h6>Pobyt: 10 dni
+						<br>Jerozolima</h6> 
+					</div>
+				</td>
+				<td class="ala">
+					<div id="div6" onmouseover="myszka6()" onmouseout="back6()">
+						<span class="fonte">2<span class="star">f</span>Hotel Jaskier</span>
+						<h6>Pobyt: 5 dni
+						<br>Katar</h6> 
+					</div>
+				</td>
+			</tr>
+		</table>
+	</main>
+	<footer>
+		<div id="lewy">
+		<a href="index.html"><img src="img/logo.png" class="logo" alt="logo"></a>
+		</div>
+		<div id="right">
+		&copy; Paradays Sp z.o.o, 2019
+		<br>
+		<span id="czas"></span>
+		</div>
+	</footer>
+</body>
+</html>
